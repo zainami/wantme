@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="quiz-container" id="intro">
+        <h1>Welcome to the Quiz</h1>
+        <p>Get to 100 points to earn my forgiveness!</p>
+        <p>Answer the questions correctly to score points. You cannot go back once you move to the next question. Time limit: 5 minutes.</p>
+        <button onclick="startQuiz()">Start Quiz</button>
+    </div>
+
+    <div id="status" style="display: none;">
+        <p id="scoreDisplay">Current Score: 0</p>
+        <p id="timer">Time Remaining: 5:00</p>
+        <p id="pointsDisplay">This question is worth 10 points.</p>
+    </div>
+
+    <div id="feedback"></div>
+
+
+    <div class="quiz-container" id="q1" style="display:none;">
+      <h2>1. How sorry are you?</h2>
+      <input type="radio" name="q1" value="a"> Not sorry<br>
+      <input type="radio" name="q1" value="b"> A little sorry<br>
+      <input type="radio" name="q1" value="c"> Very sorry<br>
+      <input type="radio" name="q1" value="d"> Extremely sorry<br>
+      <button onclick="nextQuestion('q1', 'd', 10)">Next</button>
+  </div>
+
+    <div class="quiz-container" id="q2" style="display:none;">
+        <h2>2. What is my favourite color?</h2>
+        <input type="radio" name="q2" value="a"> Pastel Blue<br>
+        <input type="radio" name="q2" value="b"> Pastel Pink<br>
+        <input type="radio" name="q2" value="c"> Emerald<br>
+        <input type="radio" name="q2" value="d"> Navy<br>
+        <input type="radio" name="q2" value="e"> Pastel Yellow<br>
+        <button onclick="nextQuestion('q2', 'b', 10)">Next</button>
+    </div>
+
+
+    <!-- Q3 -->
+    <div class="quiz-container" id="q3" style="display:none;">
+        <h2>3. What did I have for breakfast today?</h2>
+        <input type="radio" name="q3" value="a"> Chai<br>
+        <input type="radio" name="q3" value="b"> Coffee<br>
+        <input type="radio" name="q3" value="c"> Protein Shake<br>
+        <button onclick="nextQuestion('q3', 'a', 10)">Next</button>
+    </div>
+
+    <!-- Q4 -->
+    <div class="quiz-container" id="q4" style="display:none;">
+        <h2>4. What time was I born?</h2>
+        <input type="radio" name="q4" value="a"> 12 AM<br>
+        <input type="radio" name="q4" value="b"> 6 AM<br>
+        <input type="radio" name="q4" value="c"> 2 PM<br>
+        <input type="radio" name="q4" value="d"> 11 PM<br>
+        <button onclick="nextQuestion('q4', 'c', 10)">Next</button>
+    </div>
+
+    <!-- Q5 -->
+    <div class="quiz-container" id="q5" style="display:none;">
+        <h2>5. How many pets have I had?</h2>
+        <input type="radio" name="q5" value="a"> 2<br>
+        <input type="radio" name="q5" value="b"> 3<br>
+        <input type="radio" name="q5" value="c"> 5<br>
+        <button onclick="nextQuestion('q5', 'c', 15)">Next</button>
+    </div>
+
+    <!-- Q6 -->
+    <div class="quiz-container" id="q6" style="display:none;">
+        <h2>6. Select the sports I have played after school (PE doesn’t count)</h2>
+        <input type="checkbox" name="q6" value="a"> Netball<br>
+        <input type="checkbox" name="q6" value="b"> Basketball<br>
+        <input type="checkbox" name="q6" value="c"> Swimming<br>
+        <input type="checkbox" name="q6" value="d"> Horse Riding<br>
+        <input type="checkbox" name="q6" value="e"> Ballet<br>
+        <input type="checkbox" name="q6" value="f"> Football<br>
+        <input type="checkbox" name="q6" value="g"> Tennis<br>
+        <button onclick="nextQuestion('q6', ['a', 'd', 'e', 'g'], 20)">Next</button>
+    </div>
+
+    <!-- Q7 -->
+    <div class="quiz-container" id="q7" style="display:none;">
+        <h2>7. Are you going to work for Izzy again?</h2>
+        <input type="radio" name="q7" value="a"> Yes<br>
+        <input type="radio" name="q7" value="b"> No<br>
+        <input type="radio" name="q7" value="c"> Maybe<br>
+        <button onclick="nextQuestion('q7', 'a', 1)">Next</button>
+    </div>
+
+    <!-- Q8 -->
+    <div class="quiz-container" id="q8" style="display:none;">
+        <h2>8. How tall am I?</h2>
+        <input type="radio" name="q8" value="a"> 157 cm<br>
+        <input type="radio" name="q8" value="b"> 158 cm<br>
+        <input type="radio" name="q8" value="c"> 160 cm<br>
+        <input type="radio" name="q8" value="d"> 163 cm<br>
+        <button onclick="nextQuestion('q8', 'a', 10)">Next</button>
+    </div>
+
+    <!-- Q9 -->
+    <div class="quiz-container" id="q9" style="display:none;">
+        <h2>9. Where are the moles on my face?</h2>
+        <input type="checkbox" name="q9" value="a"> Right side of nose<br>
+        <input type="checkbox" name="q9" value="b"> Left side of nose<br>
+        <input type="checkbox" name="q9" value="c"> Above lips right<br>
+        <input type="checkbox" name="q9" value="d"> Above lips left<br>
+        <input type="checkbox" name="q9" value="e"> Below lips right<br>
+        <input type="checkbox" name="q9" value="f"> Below lips left<br>
+        <input type="checkbox" name="q9" value="g"> Left cheek<br>
+        <input type="checkbox" name="q9" value="h"> Right cheek<br>
+        <button onclick="nextQuestion('q9', ['b', 'd', 'e', 'g'], 15)">Next</button>
+    </div>
+
+    <!-- Q10 -->
+    <div class="quiz-container" id="q10" style="display:none;">
+        <h2>10. What audio book am I currently listening to?</h2>
+        <input type="radio" name="q10" value="a"> Anne of Green Gables<br>
+        <input type="radio" name="q10" value="b"> The Hobbit<br>
+        <input type="radio" name="q10" value="c"> Harry Potter<br>
+        <input type="radio" name="q10" value="d"> No. 1 Ladies' Detective Agency<br>
+        <input type="radio" name="q10" value="e"> The House on Mango Street<br>
+        <button onclick="nextQuestion('q10', 'd', 15)">Next</button>
+    </div>
+
+    <!-- Q11 -->
+    <div class="quiz-container" id="q11" style="display:none;">
+        <h2>11. How much do I hate you?</h2>
+        <input type="radio" name="q11" value="a"> Love<br>
+        <input type="radio" name="q11" value="b"> Neutral<br>
+        <input type="radio" name="q11" value="c"> Kinda hate<br>
+        <input type="radio" name="q11" value="d"> Hate<br>
+        <button onclick="nextQuestion('q11', 'c', 2)">Next</button>
+    </div>
+
+    <!-- Q12 -->
+    <div class="quiz-container" id="q12" style="display:none;">
+        <h2>12. What was I wearing when we first met?</h2>
+        <input type="radio" name="q12" value="a"> Half sleeve tee and skirt<br>
+        <input type="radio" name="q12" value="b"> Half sleeve tee with shorts<br>
+        <input type="radio" name="q12" value="c"> Full sleeve tee and skirt<br>
+        <input type="radio" name="q12" value="d"> Full sleeve tee with pants<br>
+        <input type="radio" name="q12" value="e"> Dress<br>
+        <input type="radio" name="q12" value="f"> Jeans and hoodie<br>
+        <button onclick="nextQuestion('q12', 'b', 10)">Next</button>
+    </div>
+
+    <!-- Q13 -->
+    <div class="quiz-container" id="q13" style="display:none;">
+        <h2>13. How many concerts have I been to?</h2>
+        <input type="radio" name="q13" value="a"> 3<br>
+        <input type="radio" name="q13" value="b"> 5<br>
+        <input type="radio" name="q13" value="c"> 7<br>
+        <input type="radio" name="q13" value="d"> 2<br>
+        <input type="radio" name="q13" value="e"> 4<br>
+        <button onclick="nextQuestion('q13', 'a', 5)">Next</button>
+    </div>
+
+    <!-- Q14 -->
+    <div class="quiz-container" id="q14" style="display:none;">
+        <h2>14. How many countries have I been to?</h2>
+        <input type="radio" name="q14" value="a"> 12<br>
+        <input type="radio" name="q14" value="b"> 23<br>
+        <input type="radio" name="q14" value="c"> 21<br>
+        <input type="radio" name="q14" value="d"> 16<br>
+        <input type="radio" name="q14" value="e"> 19<br>
+        <input type="radio" name="q14" value="f"> 20<br>
+        <button onclick="nextQuestion('q14', 'b', 20)">Next</button>
+    </div>
+
+    <div class="quiz-container" id="q15" style="display:none;">
+        <h2>15. Who is the king of the UK?</h2>
+        <input type="radio" name="q15" value="a"> Charles<br>
+        <input type="radio" name="q15" value="b"> William<br>
+        <input type="radio" name="q15" value="c"> George<br>
+        <button onclick="nextQuestion('q15', 'a', 5)">Next</button>
+    </div>
+
+    <div class="quiz-container" id="q16" style="display:none;">
+        <h2>16. What is the most dangerous animal in Australia?</h2>
+        <input type="radio" name="q16" value="a"> Shark<br>
+        <input type="radio" name="q16" value="b"> Crocodile<br>
+        <input type="radio" name="q16" value="c"> Snake<br>
+        <button onclick="bufferQuestion('q16')">Next</button>
+    </div>
+
+    <div class="quiz-container" id="results" style="display:none;">
+        <h2>Your Results</h2>
+        <p id="score"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
